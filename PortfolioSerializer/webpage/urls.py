@@ -5,16 +5,16 @@ from rest_framework_simplejwt import views as jwt_views
 
 
 profile_router = DefaultRouter()
-profile_router.register(r'My Profile', ProfileViewSet)  # Provide a valid basename
+profile_router.register(r'Profile', ProfileViewSet)  # Provide a valid basename
 
 introduction_router = DefaultRouter()
 introduction_router.register(r'Introduction', IntroductionViewSet)  # Provide a valid basename
 
 projects_router = DefaultRouter()
-projects_router.register(r'My Projects', ProjectsViewSet)  # Provide a valid basename
+projects_router.register(r'Projects', ProjectsViewSet)  # Provide a valid basename
 
 experiences_router = DefaultRouter()
-experiences_router.register(r'My Experiences', ExperiencesViewSet)  # Provide a valid basename
+experiences_router.register(r'Experiences', ExperiencesViewSet)  # Provide a valid basename
 
 about_router = DefaultRouter()
 about_router.register(r'About', AboutViewSet)  # Provide a valid basename

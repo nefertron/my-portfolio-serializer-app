@@ -14,7 +14,7 @@ class IntroductionViewSet(viewsets.ModelViewSet):
     serializer_class = IntroductionSerializer
 
 class ProjectsViewSet(viewsets.ModelViewSet):
-    queryset = Introduction.objects.all()
+    queryset = Projects.objects.all()
     serializer_class = ProjectsSerializer
 
 class ExperiencesViewSet(viewsets.ModelViewSet):
