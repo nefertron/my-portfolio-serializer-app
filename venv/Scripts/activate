@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="D:\Github\my-portfolio-serializer-app\venv"
+VIRTUAL_ENV="D:\GithubVanRental\my-portfolio-serializer-app\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
