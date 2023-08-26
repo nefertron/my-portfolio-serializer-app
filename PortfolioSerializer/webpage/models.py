@@ -21,14 +21,18 @@ class Profile(models.Model):
 class Introduction(models.Model):
     image = models.TextField()
     description = models.TextField()
-
+    is_active = models.BooleanField(default=True)
+    
     def __str__(self):
         return f'{self.description}'
 
 class Projects(models.Model):
+    is_active = models.BooleanField(default=True)
     image = models.TextField()
     title = models.CharField(max_length=100)
     description = models.TextField()
+    live_demo_link = models.TextField(default= 'https://github.com/', null=True, blank=True)
+    source_code_link = models.TextField(default= 'https://github.com/', null=True, blank=True)
 
     def __str__(self):
         return f'TITLE : {self.title} || DESCRIPTION : {self.description}'
@@ -44,9 +48,19 @@ class Experiences(models.Model):
         return f'YEAR {self.year} || MONTH : {self.month} || TITLE : {self.title}'
 
 
+class Languages(models.Model):
+    image = models.TextField()
+    title = models.CharField(max_length=100)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.title
+
 class About(models.Model):
     image = models.TextField()
     description = models.TextField()
+    is_active = models.BooleanField(default=True)
+    
 
     def __str__(self):
         return f'{self.description}'
@@ -59,6 +73,7 @@ class Contact(models.Model):
     messenger_link = models.TextField()
     gmail_link = models.TextField()
     twitter_link = models.TextField()
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return f'ADDRESS : {self.address} || CONTACT NO : {self.contact_no}'
@@ -67,6 +82,7 @@ class Contact(models.Model):
 class Message(models.Model):
     sender = models.TextField()
     message = models.TextField()
+    is_seen = models.BooleanField(default=False)
 
     def __str__(self):
         return f'SENDER : {self.sender} || MESSAGE : {self.message}'
