@@ -21,6 +21,10 @@ class ExperiencesViewSet(viewsets.ModelViewSet):
     queryset = Experiences.objects.all()
     serializer_class = ExperiencesSerializer
 
+class LanguagesViewSet(viewsets.ModelViewSet):
+    queryset = Languages.objects.all()
+    serializer_class = LanguagesSerializer
+
 class AboutViewSet(viewsets.ModelViewSet):
     queryset = About.objects.all()
     serializer_class = AboutSerializer

@@ -16,6 +16,9 @@ projects_router.register(r'Projects', ProjectsViewSet)  # Provide a valid basena
 experiences_router = DefaultRouter()
 experiences_router.register(r'Experiences', ExperiencesViewSet)  # Provide a valid basename
 
+languages_router = DefaultRouter()
+languages_router.register(r'Languages', LanguagesViewSet)  # Provide a valid basename
+
 about_router = DefaultRouter()
 about_router.register(r'About', AboutViewSet)  # Provide a valid basename
 
@@ -31,6 +34,7 @@ urlpatterns = [
     path('introduction/', include(introduction_router.urls)),
     path('projects/', include(projects_router.urls)),
     path('experiences/', include(experiences_router.urls)),
+    path('languages/', include(languages_router.urls)),
     path('about/', include(about_router.urls)),
     path('contact/', include(contact_router.urls)),
     path('message/', include(message_router.urls)),

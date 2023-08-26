@@ -22,6 +22,10 @@ class ExperiencesSerializer(serializers.ModelSerializer):
         model = Experiences
         fields = '__all__'
 
+class LanguagesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Languages
+        fields = '__all__'
 
 class AboutSerializer(serializers.ModelSerializer):
     class Meta:
