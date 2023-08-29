@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
+from datetime import datetime
 
 
 class Profile(models.Model):
@@ -13,6 +14,7 @@ class Profile(models.Model):
     address = models.TextField()
     contact_no = models.CharField(max_length=11)
     image = models.TextField()
+    email = models.TextField(default=None, blank=True, null=True)
 
     def __str__(self):
         return f'{self.fname} {self.lname}'
@@ -20,7 +22,10 @@ class Profile(models.Model):
 
 class Introduction(models.Model):
     image = models.TextField()
-    description = models.TextField()
+    description1 = models.TextField(default=None, null=True, blank=True)
+    description2 = models.TextField(default=None, null=True, blank=True)
+    description3 = models.TextField(default=None, null=True, blank=True)
+    description4 = models.TextField(default=None, null=True, blank=True)
     is_active = models.BooleanField(default=True)
     
     def __str__(self):
@@ -60,7 +65,7 @@ class About(models.Model):
     image = models.TextField()
     description = models.TextField()
     is_active = models.BooleanField(default=True)
-    
+    resume_link = models.TextField(default=None, blank=True, null=True)
 
     def __str__(self):
         return f'{self.description}'
@@ -69,6 +74,8 @@ class About(models.Model):
 class Contact(models.Model):
     address = models.TextField()
     contact_no = models.CharField(max_length=15)
+    email = models.TextField(default=None, blank=True, null=True)
+
     fb_link = models.TextField()
     messenger_link = models.TextField()
     gmail_link = models.TextField()
@@ -83,6 +90,7 @@ class Message(models.Model):
     sender = models.TextField()
     message = models.TextField()
     is_seen = models.BooleanField(default=False)
+    date_send = models.DateTimeField(default=datetime.now())
 
     def __str__(self):
         return f'SENDER : {self.sender} || MESSAGE : {self.message}'
